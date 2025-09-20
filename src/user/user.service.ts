@@ -28,7 +28,7 @@ export class UserService {
             where: { 
                 id: userId 
             },
-            relations: ['addresses'],
+            relations: ['addresses', 'addresses.city', 'addresses.city.state'],
         });
 
         if (!user) {
