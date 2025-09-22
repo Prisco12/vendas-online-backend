@@ -83,6 +83,13 @@ describe('UserService', () => {
     expect(user).toEqual(userEntityMock);
   });
 
+    it('should return error in getUserByIdUsingRelations', async () => {
+    jest.spyOn(userRepository, 'findOne').mockResolvedValueOnce(null);
+    expect(
+      service.getUserByIdUsingRelations(userEntityMock.id),
+    ).rejects.toThrow();
+  });
+
   it('should return error if user exist', async () => {
     expect(service.createUser(createUserMock)).rejects.toThrow();
   });
