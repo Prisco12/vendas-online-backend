@@ -1,6 +1,6 @@
 import { createParamDecorator, ExecutionContext } from "@nestjs/common";
 import { decode } from 'jsonwebtoken';
-import { LoginPayload } from "src/auth/dtos/loginPayload.dto";
+import { LoginPayload } from "../auth/dtos/loginPayload.dto";
 
 export const UserId = createParamDecorator(
   (_, ctx: ExecutionContext) => {
